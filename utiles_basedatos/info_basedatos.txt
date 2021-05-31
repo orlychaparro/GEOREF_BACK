@@ -1,0 +1,35 @@
+Datos de mysql 
+
+
+CREATE TABLE `rol` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `rol_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+
+
+CREATE TABLE `usuario` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_usuario` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_puhr3k3l7bj71hb7hk7ktpxn0` (`nombre_usuario`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+
+mail                  Nombre       nombre_usuario   password     
+admin@georef.com.ar  Administrador admin               admin $2a$10$LdcIFW8kSJqarDxTddk2EucMpBWBc4iQyR0KttQbxL7eW0InCtHUm
+
+
+CREATE TABLE `usuario_rol` (
+  `usuario_id` int NOT NULL,
+  `rol_id` int NOT NULL,
+  PRIMARY KEY (`usuario_id`,`rol_id`),
+  KEY `FK610kvhkwcqk2pxeewur4l7bd1` (`rol_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+
+
+ROLE_ADMIN
+ROLE_USER
+
